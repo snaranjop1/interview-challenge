@@ -1,11 +1,23 @@
-# Live Coding Challenge
+# Frontend Coding Challenge
 
-Welcome to this fast Datascope live coding challenge.
+Welcome to this cool coding challenge. The objective of this challenge is to complete the different tasks described below and make the app work as expected.
 
-Here we have a Fantasy Dragon Ball team builder app. The objective of this app is to allow users to create the best 10-member DBZ team.
+Here we have a small and simpe e-commerce app. The app consist of a simple list of store items and a shopping cart. The app is divided in the following components/files.
+![alt text](image.png)
 
-- [ ] There are some typescript bad practices in components CharacterCard and TeamCard please fix them.
-- [ ] Make the necesary changes to allow the app to add members to the team but you can't change anything in the `TeamCard.tsx` component. Team shouldn't have more than 10 members and you can't add the same character twice.
-- [ ] Currently the list of characters come from a static file. Now they should be fetched from [Dragon Ball API](https://web.dragonball-api.com/documentation) specifically from `https://dragonball-api.com/api/characters`endpoint. Please fetch the first 30. You can use fetch API or axios.
-- [ ] Combined Ki is not changing when you add team members please fit it.
-- [ ] Combined Ki is not being properly calculated please fix it.
+## How to run the app
+```bash
+pnpm install
+pnpm run dev
+```
+
+## How app should work
+
+![alt text](result.gif)
+
+## Tasks
+
+- [ ] There are some typescript bad practices in components ItemCard, Cart and CartItem please fix them.
+- [ ] Make the necessary changes to allow the app to add AND remove items to the cart but you can't change anything in the `Cart.tsx` component. Cart can't have more than 10 items and you can't add the same item twice. The "Add to Cart" button should only be displayed if the item is not on the team. Otherwise, the "Remove from Cart" button should be displayed.
+- [ ] Currently the list of characters come from a static file. Now they should be fetched from [Fake Store API](https://fakestoreapi.com/docs) specifically from `https://fakestoreapi.com/products`endpoint. Please fetch the first 30 by using the `limit` URL param. You can use fetch API or axios.
+- [ ] Subtotal is not changing when you items to the cart please fix it.
