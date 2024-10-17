@@ -1,7 +1,11 @@
-export function CartItem({ title, price, image }) {
+import { Item } from "./types";
+
+type CartItemProps = Pick<Item, "title" | "price" | "image">;
+
+export function CartItem({ title, price, image }: CartItemProps) {
   return (
     <div className="flex items-center gap-4 p-2">
-      <div className="rounded-md max-w-14 max-h-14">
+      <div className="rounded-md">
         <img
           alt="cart product image"
           className="aspect-square object-contain w-full h-full"

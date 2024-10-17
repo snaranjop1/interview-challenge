@@ -6,7 +6,7 @@ export function ItemCard({ id, title, image, price, itemInCart }) {
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <img
         alt={`Product ${id}`}
-        className="w-full h-48 object-contain"
+        className="w-full h-24 object-contain"
         height={300}
         src={image}
         style={{

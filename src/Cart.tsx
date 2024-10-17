@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/shadcn-ui/components/ui/dropdown-menu";
 import { Button } from "./shadcn-ui/components/ui/button";
-import { CartItem } from "./components/CartItem";
+import { CartItem } from "./CartItem";
 import { useMemo } from "react";
 
 export function Cart({ items }) {
@@ -29,14 +29,16 @@ export function Cart({ items }) {
         <DropdownMenuLabel>Your Cart</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <div className="grid gap-4 max-h-[400px] overflow-y-auto">
-          {items.map((item) => (
+          {items.length > 0 ? items.map((item) => (
             <CartItem
               key={`item-${item.title}`}
               title={item.title}
               price={item.price}
               image={item.image}
             />
-          ))}
+          )) : (
+            <div className="text-center text-gray-500 py-4">No items in cart</div>
+          )}
         </div>
         <DropdownMenuSeparator />
         <div className="grid gap-2 px-4 py-2">
@@ -44,7 +46,6 @@ export function Cart({ items }) {
             <span>Subtotal</span>
             <span className="font-medium">${subtotal}</span>
           </div>
-          <Button className="w-full">Checkout</Button>
         </div>
       </DropdownMenuContent>
     </DropdownMenu>
