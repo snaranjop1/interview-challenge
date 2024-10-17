@@ -6,8 +6,9 @@ import { Item } from "./types";
 
 function App() {
   const itemsList: Item[] = mockItems;
+
   return (
-    <div className="min-h-full">
+    <>
       <header className="flex items-center justify-between bg-foreground px-6 py-4 text-primary-foreground gap-2">
         <div className="flex items-center gap-2">
           <ShoppingCartIcon className="h-6 w-6" />
@@ -27,7 +28,7 @@ function App() {
           />
         ))}
       </main>
-    </div>
+    </>
   );
 }
 

@@ -29,15 +29,19 @@ export function Cart({ items }) {
         <DropdownMenuLabel>Your Cart</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <div className="grid gap-4 max-h-[400px] overflow-y-auto">
-          {items.length > 0 ? items.map((item) => (
-            <CartItem
-              key={`item-${item.title}`}
-              title={item.title}
-              price={item.price}
-              image={item.image}
-            />
-          )) : (
-            <div className="text-center text-gray-500 py-4">No items in cart</div>
+          {items.length > 0 ? (
+            items.map((item, index) => (
+              <CartItem
+                key={`item-${item.id}-${index}`}
+                title={item.title}
+                price={item.price}
+                image={item.image}
+              />
+            ))
+          ) : (
+            <div className="text-center text-gray-500 py-4">
+              No items in cart
+            </div>
           )}
         </div>
         <DropdownMenuSeparator />
